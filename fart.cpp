@@ -1,9 +1,7 @@
 //Testing Commit
-<<<<<<< HEAD
-=======
+//parker
 
 int main() {
   cout << "pee pee" << "\n";
 }
 
->>>>>>> master
