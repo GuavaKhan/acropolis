@@ -1,13 +1,11 @@
 //Testing Commit
-//parker
+//parker is cool
 //ADDING MY NAME: CHRIS CAMPBELL
-// Jonathan Vronsky
-//aaron silman was here
-
+// Jonathan Vronsky is awesome
+//aaron silman was here (OH NO!)
+// comment
 #include<stdio>
 
-//parker adding again
-// Jonathan Vronsky is awesome
 int main() {
   cout << "pee pee" << "\n";
 }
