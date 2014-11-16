@@ -4,7 +4,9 @@ acropolis
 Get this to the greek
 
 
-Objective: Predict Future % yield
+Objective
+----------
+Predict Future % yield
 
 Features
 --------
