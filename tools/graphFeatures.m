@@ -7,12 +7,12 @@
 %between 0-0.01, between 0.01-0.02 and above 0.02.
 %Due to matlab  there are only 8 different colours. 
 %So anything above 8 buckets could be confusing for this function
-function graphFeatures(x, y, bucketThershold)
+function graphFeatures(x, y, bucketThreshold)
 	clf;
 	colours = {'r*', 'k*', 'b*', 'c*', 'm*', 'g*', 'w*'};
 	tableSize = size(x)(2);
 	%Number of buckets.
-	bucketCount = size(bucketThershold)(1);
+	bucketCount = size(bucketThreshold)(1);
 	
 	for i = 1:tableSize
 		%Choose the correct subplot
@@ -22,8 +22,8 @@ function graphFeatures(x, y, bucketThershold)
 		hold on;
 		for j = 1:bucketCount
 			%Values that fall in the buckets
-			values = (y > bucketThershold(j, 1)) & (y < bucketThershold(j, 2));
-			% Get the coresponding y values
+			values = (y > bucketThreshold(j, 1)) & (y < bucketThreshold(j, 2));
+			% Get the corresponding y values
 			plotY = y(find(values),:);
 			% Get the features that match the y values.
 			plotX = features(find(values),:);
