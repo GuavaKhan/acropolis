@@ -7,7 +7,7 @@
 %between 0-0.01, between 0.01-0.02 and above 0.02.
 %Due to matlab  there are only 8 different colours. 
 %So anything above 8 buckets could be confusing for this function
-function graph(x, y, bucketThershold)
+function graphFeatures(x, y, bucketThershold)
 	clf;
 	colours = {'r*', 'k*', 'b*', 'c*', 'm*', 'g*', 'w*'};
 	tableSize = size(x)(2);
