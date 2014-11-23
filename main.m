@@ -7,6 +7,8 @@ co  = textread('data/Co.txt', '%s');
 state = textread('data/State.txt', '%d');
 field = csvread('data/Field.txt');
 date = textread('data/Date.txt', '%d');
+
+%Compiles the data into one matrix
 data = [];
 for i = 1:rows(co)
 	row = [co(i) state(i) date(i)];
