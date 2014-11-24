@@ -12,7 +12,7 @@ Features
 --------
 1. Split / Dividends - Ramya
 2. Market Cap (Share price times total shares) - Vronsky
-3. Volume - Aaron
+3. Volume - Ramya
 4. P/E (Price to Earnings Ratio)[Market value per share / Earnings per Share (EPS)] - Parker
 5. SMP (Standard & Poor rating) - Shawn
 6. Field of Business (Ag, Tech, Finance) - Dan
