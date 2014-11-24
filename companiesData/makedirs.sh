@@ -1,3 +1,3 @@
 for entry in `cat $1`; do
-	mkdir $entry
+	touch $entry/.dontdelete
 done
