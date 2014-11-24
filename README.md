@@ -25,9 +25,10 @@ Notes
 ------
 1. Companies must have been created before 2000 and in USA
 2. We will train on 30 companies
-3. We are using a Neural Network from the DeepLearn Toolbox. https://github.com/rasmusbergpalm/DeepLearnToolbox
-4. All company data will start on the year of the most recently created company
-5. Features are taken on a per quarter basis
+3. We are running 30 DISTINCT regressions - one per company.
+4. We are using a Neural Network from the DeepLearn Toolbox. https://github.com/rasmusbergpalm/DeepLearnToolbox
+5. All company data will start on the year of the most recently created company
+6. Features are taken on a per quarter basis
 
 Tasks
 ------
