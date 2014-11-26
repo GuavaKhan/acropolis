@@ -10,10 +10,10 @@ source('sigm.m');
 %Ouputs:
 %	prediction: array of predictions for each sample
 function [prediction] = logisticPredict(sample, w, means, ranges, numClasses)
+	%normalize the sample the same as the trainingX
 	for i = 2:columns(sample),
 		sample(i) = (sample(i)-means(i-1))/ranges(i-1);
 	end
-	for j = 1:numClasses,
-		prediction = g(sample, w)
-	end
+	%predict our sample(s)
+	prediction = g(sample, w)
 endfunction

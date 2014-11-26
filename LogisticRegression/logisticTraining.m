@@ -1,6 +1,6 @@
 %Author: Parker Temple for http://github.com/kwyjibo1230/acropolis
-%Depends on sigm.m
-source('sigm.m');
+%Depends on logisticIterate.m
+source('logisticIterate.m');
 
 %Inputs:
 %	trainingX: matrix of independent variables to train on
@@ -10,24 +10,21 @@ source('sigm.m');
 %Ouputs:
 %	w: the weights. number of values = to total number of variables trained on.
 function [w, means, ranges] = logisticTraining(trainingX, trainingY, iterations, alpha)
-	w = zeros(columns(trainingX)+1, 1);
 	xnorm = trainingX;
 	means = [];
 	ranges = [];
-	%Normalizes the xmatrix
+	%Normalizes trainingX
 	for i = 1:columns(xnorm),
 		means(i) = mean(trainingX(:,i));
 		ranges(i) = range(trainingX(:,i));
 		xnorm(:,i) = (xnorm(:,i)-mean(xnorm(:,i)))/(range(xnorm(:,i)));
 	end
-	xnorm = [ones(rows(trainingX), 1), xnorm]
+	xnorm = [ones(rows(trainingX), 1), xnorm];
+
 	%run stochastic gradient descent
-	for k = 1:iterations,
-		wold = w;
-		for i = 1:rows(xnorm),
-			for j = 1:rows(w),
-				w(j) = w(j) + (alpha * sum((trainingY(i) - g(xnorm(i,:),wold)') * xnorm(i,j)));
-			end
-		end
-	end
+	w = [];
+	%adds a columns of weights for each class in trainingY
+	for j = 1:columns(trainingY)
+		w = horzcat(w, logisticIterate(xnorm, trainingY(:,j), zeros(columns(trainingX)+1,1), iterations, alpha));
+	endfor
 endfunction

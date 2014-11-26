@@ -10,19 +10,17 @@ attribs = {'mpg' 'cyls' 'displ' 'hp' 'weight' 'acc' 'yr' 'origin'};
 test = [data(1:30, 1) data(1:30,4) data(1:30, 5) data(1:30, 6)];
 
 mpg = test(:,1);
-y = zeros(1, 3)
+y = zeros(1, 3);
 for i = 1:length(mpg),
-	y = [y; zeros(1,columns(y))]
-	if mpg(i) <= 15,
+	y = [y; zeros(1,columns(y))];
+	if mpg(i) <= 18.5,
 		y(i,1) = 1; %low mpg
-	elseif mpg(i) <= 25
+	elseif mpg(i) <= 26.5
 		y(i,2) = 1; %high mpg
 	else
 		y(i,3) = 1;
 	end
 end
-y
-
 
 disp('Starting logistic training');
 x = test(:,2:4);
