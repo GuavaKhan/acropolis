@@ -34,6 +34,6 @@ means
 ranges
 
 samp = [1 test(1,2:4)] %sample to predict
-prediction = logisticPredict(samp, w ,means, ranges);
+prediction = logisticPredict(samp, w ,means, ranges, columns(y));
 prediction
 

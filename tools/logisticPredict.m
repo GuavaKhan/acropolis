@@ -9,9 +9,11 @@ source('sigm.m');
 %	ranges: array of ranges from logisticTraining
 %Ouputs:
 %	prediction: array of predictions for each sample
-function [prediction] = logisticPredict(sample, w, means, ranges)
+function [prediction] = logisticPredict(sample, w, means, ranges, numClasses)
 	for i = 2:columns(sample),
 		sample(i) = (sample(i)-means(i-1))/ranges(i-1);
 	end
-	prediction = g(sample, w)
+	for j = 1:numClasses,
+		prediction = g(sample, w)
+	end
 endfunction
