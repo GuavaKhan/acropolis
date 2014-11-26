@@ -14,12 +14,14 @@ function [w, means, ranges] = logisticTraining(trainingX, trainingY, iterations,
 	xnorm = trainingX;
 	means = [];
 	ranges = [];
+	%Normalizes the xmatrix
 	for i = 1:columns(xnorm),
 		means(i) = mean(trainingX(:,i));
 		ranges(i) = range(trainingX(:,i));
 		xnorm(:,i) = (xnorm(:,i)-mean(xnorm(:,i)))/(range(xnorm(:,i)));
 	end
 	xnorm = [ones(rows(trainingX), 1), xnorm]
+	%run stochastic gradient descent
 	for k = 1:iterations,
 		wold = w;
 		for i = 1:rows(xnorm),
