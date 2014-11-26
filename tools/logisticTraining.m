@@ -9,7 +9,7 @@ source('sigm.m');
 % alpha: learning rate
 %Ouputs:
 %	w: the weights. number of values = to total number of variables trained on.
-function [w] = logisticTraining(trainingX, trainingY, iterations, alpha)
+function [w, means, ranges] = logisticTraining(trainingX, trainingY, iterations, alpha)
 	w = zeros(columns(trainingX)+1, 1);
 	xnorm = trainingX;
 	means = [];
