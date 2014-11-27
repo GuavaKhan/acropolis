@@ -24,7 +24,9 @@ function [ROCPoints] = ROCLoopValues(output, target)
 		end
 		thresholds(1, i) = minThershold;
 	end
+  %Create number of cells as the number of ROC graphs
 	ROCPoints = cell(size(target)(2), 1);
+
 	for i = 1:size(target)(2)
 		% Init threshold.
 		threshold = minimum(1, i);
@@ -32,12 +34,12 @@ function [ROCPoints] = ROCLoopValues(output, target)
 		numberOfValues = ceil(((maximum(1, i) - minimum(1, i)) / thresholds(1, i)));
 		values = zeros(numberOfValues, 2);
 		%Initiate for loop
-		thresholdOutput = output(:,i) > threshold;
+		thresholdOutput = output(:, i) > threshold;
 		valueCount = 0;
 		% Go till maximum value or a bit above.
 		thresholds
-		maximum(1,1)
-		minimum(1,1)
+		maximum(1, 1)
+		minimum(1, 1)
 		while (threshold <= (maximum(1, i) + thresholds(1, i)))
 			valueCount += 1;
 			%Compute confusion matrix
@@ -48,7 +50,7 @@ function [ROCPoints] = ROCLoopValues(output, target)
 			values(valueCount,:) = [sensativity, specificity];
 			%Increment threshold by minimum amount
 			threshold = threshold + thresholds(1, i);
-			thresholdOutput = output(:,i) > threshold;
+			thresholdOutput = output(:, i) > threshold;
 		end
 		% add ROCPoints set
 		ROCPoints{i} = values;
