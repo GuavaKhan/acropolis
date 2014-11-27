@@ -43,7 +43,7 @@ function [ROCPoints] = ROCLoopValues(output, target)
 			confusionM = confusionMatrix(target(:, i), thresholdOutput);
 			% Compute points for that threshold
 			sensativity = confusionM(1, 1) / (confusionM(1, 1) + confusionM(1, 2));
-      specificity = confusionM(2, 2) / (confusionM(2, 1) + confusionM(2, 2));
+        specificity = confusionM(2, 2) / (confusionM(2, 1) + confusionM(2, 2));
 			values(valueCount,:) = [1 - specificity, sensativity];
 			%Increment threshold by minimum amount
 			threshold = threshold + thresholds(1, i);
