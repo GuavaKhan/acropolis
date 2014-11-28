@@ -8,5 +8,5 @@ function ROC(output, target)
    hold on;
    plot((1 - ROCPoints{i}(:, 2)), ROCPoints{i}(:, 1), 'r*');
    hold off;
-  ends
+  end
 end

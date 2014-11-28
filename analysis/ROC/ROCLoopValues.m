@@ -16,7 +16,7 @@ function [ROCPoints] = ROCLoopValues(output, target)
 				% Find the difference.
 				difference = abs(output(j, i) - output(k, i));
 				if(difference < minThershold)
-					if(difference > 1e-1)
+					if(difference > 1e-4)
 						minThershold = difference;
 					end
 				end
@@ -26,7 +26,6 @@ function [ROCPoints] = ROCLoopValues(output, target)
 	end
   %Create number of cells as the number of ROC graphs
 	ROCPoints = cell(size(target)(2), 1);
-
 	for i = 1:size(target)(2)
 		% Init threshold.
 		threshold = minimum(1, i);
