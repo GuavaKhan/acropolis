@@ -12,7 +12,7 @@ function area = AUC(output, target)
     values = ROCPoints{i};
     a = values(2:end ,:);
     b = values(1:(end - 1) ,:);
-    h = b(:,1) - a(:,1);
+    h = a(:,1) - b(:,1);
     area(1, i) = sum(trapeziodArea(a(:,2), b(:,2), h));
   end
 end

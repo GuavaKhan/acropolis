@@ -10,17 +10,15 @@ function [ROCPoints] = ROCLoopValues(output, target)
 	% For each column
 	for i = 1:size(target)(2)
 		minThershold = inf;
+		currentOutput = output(:,i);
 		% Find the smallest difference.
 		for j = 1:size(target)(1)
-			for k = 1:size(target)(1)
-				% Find the difference.
-				difference = abs(output(j, i) - output(k, i));
+				% Find the min difference that is not zero.
+				vals = abs(currentOutput - currentOutput(j, i));
+				difference = min(vals(find(vals > 1e-4),:));
 				if(difference < minThershold)
-					if(difference > 1e-4)
-						minThershold = difference;
-					end
+					minThershold = difference;
 				end
-			end
 		end
 		thresholds(1, i) = minThershold;
 	end
