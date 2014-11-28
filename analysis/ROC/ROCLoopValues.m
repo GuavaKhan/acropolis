@@ -14,7 +14,7 @@ function [ROCPoints] = ROCLoopValues(output, target)
 		% Find the smallest difference.
 		for j = 1:size(target)(1)
 				% Find the min difference that is not zero.
-				vals = abs(currentOutput - currentOutput(j, i));
+				vals = abs(currentOutput - currentOutput(j, 1));
 				difference = min(vals(find(vals > 1e-4),:));
 				if(difference < minThershold)
 					minThershold = difference;
