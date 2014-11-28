@@ -8,12 +8,5 @@ function ROC(output, target)
    hold on;
    plot((1 - ROCPoints{i}(:, 2)), ROCPoints{i}(:, 1), 'r*');
    hold off;
-  end
-		ROCPoints = ROCLoopValues(output, target);
-    for i = 1:size(ROCPoints)(1)
-     subplot(size(target)(2), 1, i);
-     hold on;
-     plot((ROCPoints{i}(:, 1)), ROCPoints{i}(:, 2), 'r*');
-     hold off;
-    end
+  ends
 end

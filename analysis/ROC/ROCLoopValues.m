@@ -16,7 +16,7 @@ function [ROCPoints] = ROCLoopValues(output, target)
 				% Find the difference.
 				difference = abs(output(j, i) - output(k, i));
 				if(difference < minThershold)
-					if(difference > 1e-4)
+					if(difference > 1e-1)
 						minThershold = difference;
 					end
 				end
@@ -44,7 +44,7 @@ function [ROCPoints] = ROCLoopValues(output, target)
 			% Compute points for that threshold
 			sensativity = confusionM(1, 1) / (confusionM(1, 1) + confusionM(1, 2));
       specificity = confusionM(2, 2) / (confusionM(2, 1) + confusionM(2, 2));
-			values(valueCount,:) = [1 - specificity, sensativity];
+			values(valueCount,:) = [specificity, sensativity];
 			%Increment threshold by minimum amount
 			threshold = threshold + thresholds(1, i);
 			thresholdOutput = output(:, i) > threshold;
