@@ -1,7 +1,5 @@
 function ROC(output, target)
   clf;
-  % Source analysisTools directory
-  source("../analysisTools/confusionMatrix.m");
 	ROCPoints = ROCLoopValues(output, target);
   for i = 1:size(ROCPoints)(1)
    subplot(1, size(target)(2), i);
