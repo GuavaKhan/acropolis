@@ -1,16 +1,10 @@
-% Returns value of linear kernel equation run on two samples
-% sample1 and sample2 are two vectors from the input space e.g. a single sample
-% with any subset of the feature space
-% varargin contains the optional inputs pass inputs in as name/value pairs
-% e.g. ('option_name', option_value)
-% c is an optional numeric constant i.e. y-intercept
 
-% sample usage: LinearKernel( [1 1], [1 2], 'c', 3 ) returns 6
 
-function kernel_matrix_element = LinearKernel( sample1, sample2, varargin )
 
-	% set defaults for function
-	opts = struct( 'c', 0 );
+function kernel_matrix_element = GaussianKernel(sample1, sample2, varargin)
+
+	% set defaults for the function
+	opts = struct('sigma', 1);
 
 	% get all default fieldnames from struct
 	all_opt_names = fieldnames(opts);
@@ -26,7 +20,7 @@ function kernel_matrix_element = LinearKernel( sample1, sample2, varargin )
 
 	assert(isrow(sample2), ['Second input to LinearKernel() was not a ' ...
 		'single sample. Its dimensions were: %dx%d'], size(sample2) );
-
+	
 	% if false the matrix operations will fail
 	assert(size(sample1) == size(sample2), 'Samples were not same size.');
 
@@ -38,10 +32,8 @@ function kernel_matrix_element = LinearKernel( sample1, sample2, varargin )
 		end
 	end
 
-	c = opts.('c');
 
-	% return the kernel matrix value
-	kernel_matrix_element = (sample1 * sample2') + c;
+
 
 end
 
