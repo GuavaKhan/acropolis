@@ -2,20 +2,22 @@
 % sample1 and sample2 are two vectors from the input space e.g. a single sample
 % with any subset of the feature space
 % varargin contains the optional inputs pass inputs in as name/value pairs
-% e.g. ('c', 3)
+% e.g. ('option_name', option_value)
 % c is an optional numeric constant i.e. y-intercept
 
-% sample usage: LinearKernel( [1 1 1], [1 2 1], 'c', 3 ) returns 7
+% sample usage: LinearKernel( [1 1], [1 2], 'c', 3 ) returns 6
 
 function kernel_matrix_element = LinearKernel( sample1, sample2, varargin )
 
 	% set defaults for function
 	opts = struct( 'c', 0 );
 
+	% get all default fieldnames from struct
 	all_opt_names = fieldnames(opts);
 
-	assert( ~mod(length(varargin), 2), ['Parameters are passed as' ...
-		'name/value pairs. Number of parameters must be divisible by two' ...
+	% varargin is divisble by two
+	assert( ~mod(length(varargin), 2), ['Parameters are passed as ' ...
+		'name/value pairs. Number of parameters must be divisible by two ' ...
 		'%d parameters were passed in.'], length(varargin) );
 
 	% two assertions that make sure inputs were one samples features
