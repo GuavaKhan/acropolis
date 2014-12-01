@@ -1,24 +1,25 @@
-%This function generates the ROC data points to graph. 
-%Output-the actual output from the predictor (this is raw value
+%This function generates the PR data points to graph. 
+%output-the actual output from the predictor (this is raw value
 %	meaning not 0's and 1's but the actual percentages given by the predictor.
-%Target- the actual class the corespond to the output, this vector is in 0's and 1'
-function [PRPoints] = PRLoopValues(output, target)
+%target- the actual class the corespond to the output, this vector is in 0's and 1'
+%maxIteration -  number of iteration to use as maximum when incrementing threshold.
+%default at 10,000;
+function [PRPoints] = PRLoopValues(output, target, maxIteration = 1e4)
   minimum = min(output);
   maximum = max(output);
 	thresholds = zeros(1, size(target)(2));
 	% Find the minimum differece in the threshold.
 	% For each column
 	for i = 1:size(target)(2)
-		minThershold = inf;
 		currentOutput = output(:,i);
+		% Compute min-interval to use in case the smallest difference
+		% is very small and impractical.
+		minInterval = (maximum(1, i) - minimum(1, i)) / maxIteration; 
 		% Find the smallest difference.
-		for j = 1:size(target)(1)
-				% Find the min difference that is not zero.
-				vals = abs(currentOutput - currentOutput(j, 1));
-				difference = min(vals(find(vals > 1e-4),:));
-				if(difference < minThershold)
-					minThershold = difference;
-				end
+		minThershold = min(abs(diff(sort(currentOutput))));
+		% If too small use min-interval.
+		if (minThershold < minInterval)
+			minThershold = minInterval;
 		end
 		thresholds(1, i) = minThershold;
 	end
@@ -27,7 +28,7 @@ function [PRPoints] = PRLoopValues(output, target)
 	for i = 1:size(target)(2)
 		% Init threshold.
 		threshold = minimum(1, i);
-		% NumberOfValues to compute for ROC graph.
+		% NumberOfValues to compute for PR graph.
 		numberOfValues = ceil(((maximum(1, i) - minimum(1, i)) / thresholds(1, i)));
 		values = zeros(numberOfValues, 2);
 		%Initiate for loop
