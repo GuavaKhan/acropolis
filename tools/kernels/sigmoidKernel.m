@@ -1,16 +1,17 @@
-% Returns value of linear kernel equation run on two samples
+% Returns value of sigmoid kernel equation run on two samples
 % sample1 and sample2 are two vectors from the input space e.g. a single sample
 % with any subset of the feature space
 % varargin contains the optional inputs pass inputs in as name/value pairs
 % e.g. ('option_name', option_value)
-% c is an optional numeric constant i.e. y-intercept
 
-% sample usage: LinearKernel( [1 1], [1 2], 'c', 3 ) returns 6
 
-function kernel_matrix_element = LinearKernel( sample1, sample2, varargin )
+
+% sample usage: SigmoidKernel( [1 1], [1 2], 'c', 3, 'slope', 2 )
+
+function kernel_matrix_element = SigmoidKernel( sample1, sample2, varargin )
 
 	% set defaults for function
-	opts = struct( 'c', 0 );
+	opts = struct( 'c', 0, 'slope', 1 );
 
 	% get all default fieldnames from struct
 	all_opt_names = fieldnames(opts);
@@ -39,9 +40,10 @@ function kernel_matrix_element = LinearKernel( sample1, sample2, varargin )
 	end
 
 	c = opts.('c');
+	slope = opts.('slope');
 
 	% return the kernel matrix value
-	kernel_matrix_element = (sample1 * sample2') + c;
+	kernel_matrix_element = tanh( slope * (sample1 * sample2') + c );
 
 end
 
