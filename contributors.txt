@@ -4,12 +4,12 @@ Ramya: Found lasso and ridge code. Responsible for Yahoo! stock market data pull
 
 Aaron: Organized the research and data and orchestrated the write up of the white paper/report. 
 
-Parker: researched lasso regularization and created the slides regarding it. Responsible for writing code for logistic regression. (unused due to change in project goal). Responsible for part of data acquisition: researched P/E (price to earnings ratio). Responsible for explaining GIT version control and organizing the repository to streamline work on the project.
+Parker: researched lasso regularization and created the slides regarding it. Responsible for writing code for logistic regression. (unused due to change in project goal). Responsible for part of data acquisition: researched P/E (price to earnings ratio) (unused because it was deemed an unecessary feature). Responsible for explaining GIT version control and organizing the repository to streamline work on the project.
 
-Dan: researched ridge regulatization and created the slides regarding it. Responsible for part of data acquisition: researched field of business, time existed, and state in which headquarers resides. Wrote code for data normalization and ridge code (unused due to change in project goal). Contributed publically available elastic net code for project use. 
+Dan: researched ridge regulatization and created the slides regarding it. Responsible for part of data acquisition: researched field of business, time existed, and state in which headquarers resides (unused because they were deemed unecessary features). Wrote code for data normalization and ridge code (unused due to change in project goal). Contributed publically available elastic net code for project use. 
 
-Chris: researched elastic net and created the slides regarding it. Worked on getting the data to be in a MatLab readable format. Responsible for part of data acquisition: researched employee and stockholder numbers. Research on random forest neural nets (unused due to change in project goal).
+Chris: researched elastic net and created the slides regarding it. Worked on getting the data to be in a MatLab readable format. Responsible for part of data acquisition: researched employee and stockholder numbers (unused because it was deemed an unecessary feature). Research on random forest neural nets (unused due to change in project goal).
 
 Jonathan: Finalized how the data is read in. Created the code that runs each regularization technique on all the samples. Responsible for part of data acquisition: researched market cap. Created code to generate ROC curves (unused due to change in project goal). 
 
-Shawn: Created code to generate kernels for SVM (unused due to change in project goal). Researched non-negative garotte and created the slides regarding it. Responsible for part of data acquisition: Researched S&P (standard and poor rating). Contributed non-negative garotte notes to white paper.
+Shawn: Created code to generate kernels for SVM (unused due to change in project goal). Researched non-negative garotte and created the slides regarding it. Responsible for part of data acquisition: Researched S&P (standard and poor rating) (unused because it was deemed an unecessary feature) . Contributed non-negative garotte notes to white paper.
