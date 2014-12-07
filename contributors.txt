@@ -9,11 +9,11 @@ Aaron: Organized the research and data and orchestrated the write up of the
 white paper/report. 
 
 Parker: researched lasso regularization and created the slides regarding it. 
-Responsible for writing code for logistic regression. (unused due to change in 
-project goal). Responsible for part of data acquisition: researched P/E 
-(price to earnings ratio) (unused because it is a just a ratio of other features. 
-This means that it has no independent value of its own, only value depedent on 
-values we already are training on.). Set up GIT repository.
+Responsible for writing code for logistic regression. (unused due to switch 
+to linear regression). Responsible for part of data acquisition: researched 
+P/E (price to earnings ratio) (unused because it is a just a ratio of other 
+features. This means that it has no independent value of its own, only value 
+depedent on values we already are training on.). Set up GIT repository.
 
 Dan: researched ridge regulatization and created the slides regarding it. 
 Responsible for part of data acquisition: researched field of business, 
