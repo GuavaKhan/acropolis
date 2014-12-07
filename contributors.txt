@@ -4,7 +4,7 @@ Ramya: Found lasso and ridge code. Responsible for Yahoo! stock market data pull
 
 Aaron: Organized the research and data and orchestrated the write up of the white paper/report. 
 
-Parker: researched lasso regularization and created the slides regarding it. Responsible for writing code for logistic regression. (unused due to change in project goal). Responsible for part of data acquisition: researched P/E (price to earnings ratio) (unused because it was deemed an unecessary feature). Set up GIT repository.
+Parker: researched lasso regularization and created the slides regarding it. Responsible for writing code for logistic regression. (unused due to change in project goal). Responsible for part of data acquisition: researched P/E (price to earnings ratio) (unused because it is a just a ratio of other features. This means that it has no independent value of its own, only value depedent on values we already are training on.). Set up GIT repository.
 
 Dan: researched ridge regulatization and created the slides regarding it. Responsible for part of data acquisition: researched field of business, time existed, and state in which headquarers resides (unused because it overcomplicated the feature set). Wrote code for data normalization and ridge code (unused due using the lasso matlab function). Contributed publically available elastic net code for project use. 
 
