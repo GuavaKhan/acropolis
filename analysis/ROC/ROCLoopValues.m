@@ -28,23 +28,28 @@ function [ROCPoints] = ROCLoopValues(output, target, maxIteration = 1e4)
 		% Init threshold.
 		threshold = minimum(1, i);
 		% NumberOfValues to compute for ROC graph.
-		numberOfValues = ceil(((maximum(1, i) - minimum(1, i)) / thresholds(1, i)));
-		values = zeros(numberOfValues, 2);
 		%Initiate for loop
 		thresholdOutput = output(:, i) > threshold;
 		valueCount = 0;
-		% Go till maximum value or a bit above.
-		while (threshold <= (maximum(1, i) + thresholds(1, i)))
-			valueCount += 1;
-			%Compute confusion matrix
-			confusionM = confusionMatrix(target(:, i), thresholdOutput);
-			% Compute points for that threshold
-			sensativity = confusionM(1, 1) / (confusionM(1, 1) + confusionM(1, 2));
-      specificity = confusionM(2, 2) / (confusionM(2, 1) + confusionM(2, 2));
-			values(valueCount,:) = [specificity, sensativity];
-			%Increment threshold by minimum amount
-			threshold = threshold + thresholds(1, i);
-			thresholdOutput = output(:, i) > threshold;
+		if(thresholds(1, i) == 0)
+			values = ones(1, 2);
+			values(valueCount + 1,:) = [0, 0];
+		else
+			numberOfValues = ceil(((maximum(1, i) - minimum(1, i)) / thresholds(1, i)));
+			values = zeros(numberOfValues, 2);
+			% Go till maximum value or a bit above.
+			while (threshold <= (maximum(1, i) + thresholds(1, i)))
+				valueCount += 1;
+				%Compute confusion matrix
+				confusionM = confusionMatrix(target(:, i), thresholdOutput);
+				% Compute points for that threshold
+				sensativity = confusionM(1, 1) / (confusionM(1, 1) + confusionM(1, 2));
+				specificity = confusionM(2, 2) / (confusionM(2, 1) + confusionM(2, 2));
+				values(valueCount,:) = [specificity, sensativity];
+				%Increment threshold by minimum amount
+				threshold = threshold + thresholds(1, i);
+				thresholdOutput = output(:, i) > threshold;
+			end
 		end
 		% add ROCPoints set
 		ROCPoints{i} = values;
