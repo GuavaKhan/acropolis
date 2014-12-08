@@ -52,6 +52,5 @@ end
 
 fclose(fid);
 
-%outout format each colum is the averge running time for each algorithm
-%col = [ols, lasso, elastic, ridge, nng]
-% dlmwrite('./jazz.txt', times);
+
+
