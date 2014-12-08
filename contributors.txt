@@ -3,8 +3,8 @@ Contributions to the project
 Ramya: Found lasso and ridge code. Researched regularization techniques. 
 Responsible for Yahoo! stock market data pulling as well as formulating & 
 outlining project idea and details. Researched kurtosis, split/dividends 
-(eventually discarded). Created slides on project background. Wrote 
-preliminary script for lambda and cross validation fit plots.
+(eventually discarded). Set up powerpoint, created slides on project 
+background. Wrote preliminary script for lambda and cross validation fit plots.
 
 Aaron: Organized the research and data and orchestrated the write up of the 
 white paper/report. 
