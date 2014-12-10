@@ -1,0 +1,43 @@
+Contributions to the project
+
+Ramya: Found lasso and ridge code. Researched regularization techniques. 
+Responsible for Yahoo! stock market data pulling as well as formulating & 
+outlining project idea and details. Researched kurtosis, split/dividends 
+(eventually discarded). Set up powerpoint, created slides on project 
+background. Wrote preliminary script for lambda and cross validation fit plots.
+
+Aaron: Organized the research and data and orchestrated the write up of the 
+white paper/report. 
+
+Parker: researched lasso regularization and created the slides regarding it. 
+Responsible for writing code for logistic regression. (unused due to switch 
+to linear regression). Responsible for part of data acquisition: researched 
+P/E (price to earnings ratio) (unused because it is a just a ratio of other 
+features. This means that it has no independent value of its own, only value 
+depedent on values we already are training on.). Set up GIT repository.
+
+Dan: researched ridge regulatization and created the slides regarding it. 
+Responsible for part of data acquisition: researched field of business, 
+time existed, and state in which headquarers resides (unused because it 
+overcomplicated the feature set). Wrote code for data normalization and ridge 
+code (unused due using the lasso matlab function). Contributed publically 
+available elastic net code for project use. 
+
+Chris: researched elastic net and created the slides regarding it. Worked on 
+getting the data to be in a MatLab readable format. Responsible for part of 
+data acquisition: researched employee and stockholder numbers (unused because 
+no reliable way to gather it and had hugely varying formats). Research on 
+random forest neural nets (unused due to switch to linear regression).
+
+Jonathan: Finalized how the data is read in. Created the code that runs each 
+regularization technique on all the samples. Responsible for part of data 
+acquisition: researched market cap. Created code to generate ROC curves 
+(unused because of difficulty producing informative curves with linear regression).
+Formulated idea for colinearity script.
+
+Shawn: Created code to generate kernels for SVM (unused due to switch to 
+linear regression). Researched non-negative garotte and created the slides 
+regarding it. Responsible for part of data acquisition: Researched S&P (unused 
+because it required payments and was not easily machine scrapeable). 
+Contributed non-negative garotte notes to white paper. Wrote MATLAB script for
+examining colinearity of one feature with another.
