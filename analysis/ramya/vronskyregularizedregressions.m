@@ -4,7 +4,7 @@ function [X, Y, results] = vronskyregularizedregressions()
 	numberOfCompanies = numberOfCompanies(1);
 	base = '../../companiesData/';
 	results = ones(28, 5);
-	for i = 3:28
+	for i = 3:26
 		i
 		company = companies(i).name;
 		open = load(strcat(base, company, '/', company, '_open.txt')); 
