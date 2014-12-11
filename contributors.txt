@@ -5,6 +5,7 @@ Responsible for Yahoo! stock market data pulling as well as formulating &
 outlining project idea and details. Researched kurtosis, split/dividends 
 (eventually discarded). Set up powerpoint, created slides on project 
 background. Wrote preliminary script for lambda and cross validation fit plots.
+Had to redo ridge slides. 
 
 Aaron: Organized the research and data and orchestrated the write up of the 
 white paper/report. 
