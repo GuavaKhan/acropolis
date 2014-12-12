@@ -1,7 +1,7 @@
 acropolis
 =========
 
-Get this to the greek
+Stock prediction using various regularization techniques on linear regression. 
 
 
 Objectives
