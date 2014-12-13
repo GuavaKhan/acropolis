@@ -1,0 +1,2 @@
+OLS       LASSO     ELASTIC   RIDGE     NNG
+0.5036    0.4722    0.4715    0.5087    0.5003

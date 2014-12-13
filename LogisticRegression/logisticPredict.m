@@ -15,5 +15,8 @@ function [prediction] = logisticPredict(sample, w, means, ranges, numClasses)
 		sample(i) = (sample(i)-means(i-1))/ranges(i-1);
 	end
 	%predict our sample(s)
-	prediction = g(sample, w)
+	rowCount = size(sample)(1);
+	sample = horzcat(ones(rowCount, 1), sample);
+	sample
+	prediction = g(sample, w);
 endfunction
